@@ -172,7 +172,7 @@ btn_show_def.pack(side=tk.RIGHT, ipadx=10)
 # create a label for the showing of definition
 lbl_defi = tk.Label(master=frm_learn, text="",bg='#FFC0CB')
 lbl_defi.grid(row=2, column=0, padx=10,sticky="ew")
-    
+
 #=========================================================
 
 
