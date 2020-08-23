@@ -3,6 +3,7 @@ import numpy as np
 import random
 import pandas as pd
 from openpyxl import load_workbook
+import xlsxwriter
 # This is code is written by Jiali Liang to benefit 
 # GRE/SAT students from reciting their vocabs
 # I wish you winner winner chicken dinner!
@@ -57,8 +58,34 @@ def save_vocab():
     
 def TXT2EXCEL():
     df = pd.read_table(TXT_file_name, sep='\t')#, error_bad_lines=False)
-    df.to_excel(EXCEL_file_name, 'Sheet1')
 
+    writer = pd.ExcelWriter(EXCEL_file_name, engine='xlsxwriter')
+    df.to_excel(writer, 'Sheet1')
+    
+    
+    # Light red fill with dark red text.
+
+    workbook  = writer.book
+
+    worksheet = writer.sheets['Sheet1']
+    format1 = workbook.add_format({'bg_color':   '#FFC7CE',\
+                                   'font_color': '#9C0006'})
+        
+    format2 = workbook.add_format({'bg_color':   '#1937fa',\
+                                   'font_color': '#9C0006'})   
+        
+    worksheet.conditional_format('A1:C500', {'type':     'text',
+                                       'criteria': 'containing',
+                                       'value':    '+',
+                                       'format':   format1})
+    
+    
+    worksheet.conditional_format('A1:C500', {'type':     'text',
+                                       'criteria': 'containing',
+                                       'value':    '+',
+                                       'format':   format2})
+    writer.save()
+    
 
 
 def learn_vocab():    
@@ -128,11 +155,9 @@ def mark():
     sentence_found = search_vocab(lines,word2search)
     inx = lines.index(sentence_found)
     
-    # if the word has been marked before, AKA has "+"
-    if (sentence_found.find('+') != -1): 
-        lines[inx] += "+" 
-    else:
-        lines[inx] += "    +" 
+    #print(lines[inx][0])
+    Word,Def = lines[inx].split("\t", 1)[0],lines[inx].split("\t", 1)[1]
+    lines[inx] = Word+"+\t"+Def
     #print(lines)
     with open(TXT_file_name, 'w') as f:
         for line in lines:

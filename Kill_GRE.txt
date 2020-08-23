@@ -1,4 +1,4 @@
-# Word	class	Definition
+#Word	#Class	#Definition
 Contrite	adj.	過意不去的
 Deftness	adj.	靈巧
 Solace	n./v.	安慰，緩和
@@ -161,7 +161,7 @@ pecuniary	adj	金錢的，錢財方面的
 quixotic	adj	不切實際的
 envisage	v	設想
 abeyance	n	中止
-abstemious	adj	有節制的
+abstemious+	adj	有節制的
 acumen	n	敏銳
 adulation	n	諂媚
 affinity	n	緊密聯繫，類同，吸引
@@ -329,7 +329,7 @@ anatomize	v	詳細分析
 deficit	n	赤字
 far-fetched	adj	牽強的
 inexplicable	adj	無法說明的
-decrepitude	n	衰老    +
+decrepitude+	n	衰老
 defame	v	誹謗
 deflect	v	使轉向
 degrade	v	貶低，腐蝕
@@ -349,7 +349,7 @@ disintegrate	v	瓦解
 disorganize	v	擾亂
 dispute	v	爭吵，質疑
 disregard	v	忽視，貶低
-dissemble	v	偽裝
+dissemble+	v	偽裝
 distend	v	膨脹
 distinctive	adj	特別的
 douse	v	熄滅
@@ -398,7 +398,7 @@ squelch	v	鎮壓
 collegial	adj	集體的
 outmoded	adj	過時的
 specimen	n	標本
-elucidate	v	闡明
+elucidate+	v	闡明
 demarcate	v	劃出界線
 panoply	n	巨大數量
 evince	v	表明
@@ -415,7 +415,7 @@ collegiality	n	共同掌權
 suppleness	n	柔軟
 exuberant	adj	熱情洋溢的，過度的
 fealty	n	忠誠
-fester	v	惡化
+fester++	v	惡化
 fickle	adj	善變的
 flagrant	adj	明目張膽的
 shrewdness	n	精明
@@ -425,7 +425,7 @@ insouciance	n	無憂無慮
 surreptitiousness	n	秘密，偷偷摸摸，鬼鬼祟祟
 pollination	n	授粉
 impediment	n	妨礙，阻礙
-malady	n	病，疾病，社會腐敗  +
+malady+	n	病，疾病，社會腐敗
 recede	v	後退
 rambling	adj	冗長含糊的
 crisp	adj	脆，酥，鮮嫩
@@ -512,21 +512,21 @@ nebulous	adj	模糊的
 negligent	adj	疏忽大意的
 negligible	adj	微不足道，不重要的
 nettle	v	激怒
-nimble	adj	敏捷的，敏銳的
+nimble+	adj	敏捷的，敏銳的
 nondescript	adj	難以歸類，難以形容，單調的
 numinous	adj	神聖的，超自然的
 obeisance	n	尊敬
 obfuscate	v	混淆，使。。迷惑
-objectionable	adj	令人反感的
+objectionable+	adj	令人反感的
 obscure	adj	不出名的，費解的
 obsequious	adj	諂媚的
 obtrusive	adj	強迫人的，出風頭的，顯眼的
-occlude	v	阻塞
+occlude+	v	阻塞
 ominous	adj	不詳的
 omit	v	遺漏
 onetime	adj	過去的
 onset	n	開始
-oppressive	adj	殘酷的，令人窒息的
+oppressive+	adj	殘酷的，令人窒息的
 opprobrium	n	譴責，恥辱
 opulent	adj	富裕的，豪華的，奢侈的
 orientation	n	目標，態度
@@ -535,16 +535,15 @@ outstrip	v	超過
 overshadow	v	遮暗，使。。黯然失色，超越
 overthrow	v	打倒，推翻，廢除
 pacific	adj	和平主義的
-palliate	v	減輕
+palliate+	v	減輕
 partisan	adj	有偏見的
-
 pastiche	n	大雜燴
 pastoral	adj	鄉村的
 patchwork	n	拼湊成的東西大雜燴
 pathetic	adj	可憐的
 peculiar	adj	奇怪的
-pedigree	n	身世
-penchant	n	傾向，嗜好
+pedigree+	n	身世
+penchant+	n	傾向，嗜好
 peripheral	adj	邊緣的
 perspicacious	adj	有洞察力的
 pervasive	adj	普遍的，瀰漫的
@@ -556,9 +555,9 @@ posture	n	態度，擺姿態
 precarious	adj	危險的，不穩固
 precede	v	比。。先發生
 precipitate	v/adj	衝動的，魯莽的，引發，加速，沈澱，
-predilection	n	偏愛
+predilection+	n	偏愛
 prefigure	v	預示
-preside	v	主持
+preside+	v	主持
 pressing	adj	緊迫的，重要的
 presage	v	預示
 preternatural	adj	異乎尋常的
@@ -570,7 +569,7 @@ profligate	adj	揮霍的
 profusion	n	大量
 prolix	adj	冗長的
 proponent	n	支持者
-protract	v	拖延，延長
+protract+	v	拖延，延長
 provincial	adj	狹隘的，省的
 provisional	adj	臨時的
 pseudonym	n	筆名，假名
@@ -578,13 +577,13 @@ pugnacious	adj	好鬥的
 purveyor	n	供應商
 purview	n	範圍
 quaff	v	痛飲
-quash	v	平息，否決  +
+quash+	v	平息，否決
 quirky	adj	奇怪的
 raillert	n	開玩笑
 rant	v	咆哮，嚴厲批評
-rapacious	adj	貪婪的
+rapacious+	adj	貪婪的
 rapprochement	n	和解
-recalcitrant	adj	倔強反抗的
+recalcitrant+	adj	倔強反抗的
 recoil	v	畏縮，報應，反彈
 recrudescent	adj	復發的
 rein	v	統治，控制
@@ -593,7 +592,7 @@ render	v	呈現，再現
 repudiate	v	拒絕承認，與。。斷絕關係
 restive	adj	躁動不安的
 riddle	n	謎
-row	n	爭吵  +
+row+	n	爭吵
 sacrosanct	adj	神聖不可改變的
 scant	adj	缺乏的
 self-defeating	adj	自我挫敗，弄巧成拙，不利於自己
@@ -676,8 +675,8 @@ plunder	v	掠奪，侵吞，竊取
 beguile	v	欺騙，使著迷，使時間過的愉快
 impassion	v	激起。。的熱情
 anticipate	v	先於。。的行動，預期，期望
-unprepossessing	 adj	不討人喜歡，不吸引人的
-contemptuous	 adj	輕蔑的，瞧不起的
+unprepossessing	adj	不討人喜歡，不吸引人的
+contemptuous	adj	輕蔑的，瞧不起的
 accession	n	就職，攻擊，登基，同意，獲得，感情爆發，接近
 capacious	a	容量大，寬闊的，心胸寬大的
 eruption	n	爆發
@@ -707,9 +706,9 @@ scold	v	責罵，斥責
 devoid	adj	缺乏
 vicavicous	adj	活潑的，快活的
 slumberous	adj	像要睡覺的，沈睡的
-arousal 	n	喚起，覺醒，激勵
+arousal	n	喚起，覺醒，激勵
 maudlin	adj	容易流淚的，情感脆弱的
-helter-skelter 	n/adj	倉促忙亂的
+helter-skelter	n/adj	倉促忙亂的
 indecorous	adj	無禮的，不和禮節的
 somber	a	昏暗的，陰沈的，嚴峻的，顏色黯淡的
 mien	n	風采，態度，外表，樣子
@@ -738,3 +737,4 @@ remiss	adj	疏忽的，不小心的，無力的
 unduly	adj	過分的，過度的
 conform	v	遵守，遵照，適應
 tribute	n	進貢，敬意，尊崇
+rancor	n	敵意，憤恨
