@@ -74,16 +74,17 @@ def TXT2EXCEL():
     format2 = workbook.add_format({'bg_color':   '#1937fa',\
                                    'font_color': '#9C0006'})   
         
-    worksheet.conditional_format('A1:C500', {'type':     'text',
+    worksheet.conditional_format('A1:C20000', {'type':     'text',
                                        'criteria': 'containing',
                                        'value':    '+',
                                        'format':   format1})
     
-    
+    '''
     worksheet.conditional_format('A1:C500', {'type':     'text',
                                        'criteria': 'containing',
                                        'value':    '+',
                                        'format':   format2})
+    '''
     writer.save()
     
 
