@@ -830,3 +830,14 @@ cynicism	b	譏笑
 labyrinth	n	迷宮，從縱複雜，迷路
 bludgeon	n/v	欺負，恐嚇
 crabbed	adj	難懂的，不高興，暴躁
+diffident	adj	優柔寡斷
+trace	n	微量，絲毫
+judicious	adj	明智的，明斷的
+motley	adj	雜色的
+mawkishness	n	令人作嘔
+austerity	n	嚴格，樸素
+entice	v	誘使，慫恿
+gall	v	怨恨，苦味，膽汁，惡毒，惱怒
+placate	v	安撫
+appease	v	平息，緩和，滿足
+rankle	v	使疼痛，使怨恨
