@@ -176,7 +176,7 @@ anthropogenic	adj	人為的
 ape	v	模仿
 aplomb	n	鎮定，泰然自若
 aprocryphal	adj	虛假的
-apposite	adj	合適的
+apposite+	adj	合適的
 archaic	adj	古老的
 artless	adj.	純真的，樸實的
 assuage	v	減輕，緩和
@@ -350,7 +350,7 @@ disorganize	v	擾亂
 dispute	v	爭吵，質疑
 disregard	v	忽視，貶低
 dissemble+	v	偽裝
-distend+	v	膨脹
+distend++	v	膨脹
 distinctive	adj	特別的
 douse	v	熄滅
 dovish	adj	和平主義的
@@ -537,7 +537,7 @@ overthrow	v	打倒，推翻，廢除
 pacific	adj	和平主義的
 palliate+	v	減輕
 partisan	adj	有偏見的
-pastiche	n	大雜燴
+pastiche+	n	大雜燴
 pastoral	adj	鄉村的
 patchwork	n	拼湊成的東西大雜燴
 pathetic	adj	可憐的
@@ -676,7 +676,7 @@ beguile	v	欺騙，使著迷，使時間過的愉快
 impassion	v	激起。。的熱情
 anticipate	v	先於。。的行動，預期，期望
 unprepossessing	adj	不討人喜歡，不吸引人的
-contemptuous	adj	輕蔑的，瞧不起的
+contemptuous+	adj	輕蔑的，瞧不起的
 accession	n	就職，攻擊，登基，同意，獲得，感情爆發，接近
 capacious	a	容量大，寬闊的，心胸寬大的
 eruption	n	爆發
@@ -707,10 +707,10 @@ devoid	adj	缺乏
 vicavicous	adj	活潑的，快活的
 slumberous	adj	像要睡覺的，沈睡的
 arousal	n	喚起，覺醒，激勵
-maudlin	adj	容易流淚的，情感脆弱的
+maudlin+	adj	容易流淚的，情感脆弱的
 helter-skelter	n/adj	倉促忙亂的
 indecorous	adj	無禮的，不和禮節的
-somber	a	昏暗的，陰沈的，嚴峻的，顏色黯淡的
+somber+	a	昏暗的，陰沈的，嚴峻的，顏色黯淡的
 mien	n	風采，態度，外表，樣子
 cardinal	adj	重要的，主要的，基本的
 persona	n	小說中的人物，角色
@@ -885,7 +885,7 @@ retinue	n	跟隨者
 meld	v	合併
 spearhead	n/v	先鋒部隊，帶領
 trepidation	n	慌張，不安
-tenacity	n	韌性
+tenacity+	n	韌性
 plummeted	adj	垂直下降，急速減少
 oracular	adj	神諭的，難懂的
 aggravate	v	加劇，惡化，激怒
@@ -896,3 +896,19 @@ savage	adj	野性的，原始的，粗魯的，荒涼的
 condescending	adj	居高臨下的
 hysteria	adj	情緒爆發，歇斯底里
 vilify	v	詆毀
+extol	v	讚揚
+umbrage	n	生氣
+unexampled	adj	前所未有的
+polemic	n	猛烈抨擊，態度鮮明
+economic	adj	有利可圖的
+stasis	n	停滯
+factious	adj	分黨派的
+colossal	adj	巨大的
+misgiving	n	疑慮，擔憂
+analytical	adj	善於分析的，客觀冷靜的
+balk-at	phrase	迴避
+mordant	adj	尖酸刻薄的
+untether	v	脫離
+qualm	n	不安
+prompt	v/adj	促使，敏捷的
+flush-with	phrase	臉紅
