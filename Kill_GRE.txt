@@ -930,3 +930,5 @@ utter	v/adj	表達，完全的
 redouble	v	大量增加
 panegyrgic	adj	頌揚的
 rebuke	v/n	指責，阻礙，阻止
+revert	v	回覆，復舊，重提，歸還
+resort	v	訴諸，憑藉，求助
