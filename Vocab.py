@@ -10,9 +10,26 @@ import xlsxwriter
 
 #=========================================================
 # General Names
+# The .txt file name 
 TXT_file_name = 'Kill_GRE.txt'
+
+# .xlsx file name
 EXCEL_file_name = 'Kill_GRE.xlsx'
+
+# Title display on the window
 TITLE = "加力的單詞本"
+
+# Defualt setting of only review marked vocab
+
+Review_only_marked = True
+
+# Hightlight format
+level1_bg_color = '#9bc5eb'
+level1_fg_color = '#78021a'
+level2_bg_color = '#ba9ded'
+level2_fg_color = '#78021a'
+level3_bg_color = '#FFC7CE'
+level3_fg_color = '#78021a'
 #=========================================================
 
 #=========================================================
@@ -34,21 +51,6 @@ def save_vocab():
     with open(TXT_file_name, 'a+') as f:
         f.write("%s\t%s\t%s\n" % (word,class_word,define))
 
-    '''
-    #df = pd.DataFrame({[word,class_word,define]},columns=['col 1'])
-    writer = pd.ExcelWriter('demo.xlsx', engine='openpyxl')
-    # try to open an existing workbook
-    writer.book = load_workbook('demo.xlsx')
-    # copy existing sheets
-    #writer.sheets = dict((ws.title, ws) for ws in writer.book.worksheets)
-    # read existing file
-    reader = pd.read_excel(r'demo.xlsx')
-    writer.append([word,class_word,define])
-    # write out the new sheet
-    #df.to_excel(writer,index=True,header=False,startrow=len(reader)+1)
-
-    writer.close()
-    '''
     # clear the entry
     entry[0].delete(0, tk.END)
     entry[1].delete(0, tk.END)
@@ -68,25 +70,56 @@ def TXT2EXCEL():
     workbook  = writer.book
 
     worksheet = writer.sheets['Sheet1']
-    format1 = workbook.add_format({'bg_color':   '#FFC7CE',\
-                                   'font_color': '#9C0006'})
+    
+    # Set up different format background
+    format1 = workbook.add_format({'bg_color':   level1_bg_color,\
+                                   'font_color': level1_fg_color})
         
-    format2 = workbook.add_format({'bg_color':   '#1937fa',\
-                                   'font_color': '#9C0006'})   
+    format2 = workbook.add_format({'bg_color':   level2_bg_color,\
+                                   'font_color': level2_fg_color})  
+        
+    format3 = workbook.add_format({'bg_color':   level3_bg_color,\
+                                   'font_color': level3_fg_color}) 
+
+
+    # The order has to be in this format or it would not work
+    worksheet.conditional_format('A1:C20000', {'type':     'text',
+                                       'criteria': 'containing',
+                                       'value':    '+++',
+                                       'format':   format3})       
+        
+    worksheet.conditional_format('A1:C20000', {'type':     'text',
+                                       'criteria': 'containing',
+                                       'value':    '++',
+                                       'format':   format2})
         
     worksheet.conditional_format('A1:C20000', {'type':     'text',
                                        'criteria': 'containing',
                                        'value':    '+',
                                        'format':   format1})
     
-    '''
-    worksheet.conditional_format('A1:C500', {'type':     'text',
-                                       'criteria': 'containing',
-                                       'value':    '+',
-                                       'format':   format2})
-    '''
+
+
+
     writer.save()
     
+
+    
+def toggle(tog=[0]):
+    '''
+    a list default argument has a fixed address
+    '''
+    tog[0] = not tog[0]
+    global Review_only_marked
+    if tog[0]:
+        btn_review_marked.config(text='Review only Marked? : False')
+        Review_only_marked = False
+        
+    else:
+        btn_review_marked.config(text='Review only Marked? : True')
+        Review_only_marked = True
+        
+    #print(Review_only_marked)  
 
 
 def learn_vocab():    
@@ -118,9 +151,16 @@ def learn_vocab():
         btn_start.destroy()
         btn_show_def.destroy()
         btn_mark.destroy()
+        btn_review_marked.destroy()
+        
         return
         
     elif learn_vocab.count_learn == 0:
+        print(Review_only_marked) 
+        if Review_only_marked:
+            marked_inx = review_marked()
+            learn_vocab.random_num = random.sample(marked_inx,learn_vocab.num_learn)
+        else:    
             learn_vocab.random_num = random.sample(range(0,len(learn_vocab.R_word)),\
                                     learn_vocab.num_learn)
             # Review sequence
@@ -152,7 +192,7 @@ def mark():
     #print(lines.index(learn_vocab.R_word+"    "+learn_vocab.R_word,learn_vocab.R_class,learn_vocab.R_define))
 
     word2search = learn_vocab.R_word[learn_vocab.random_num][learn_vocab.count_learn]
-    print("here is word to search %s \n"%word2search)
+    #print("here is word to search %s \n"%word2search)
     sentence_found = search_vocab(lines,word2search)
     inx = lines.index(sentence_found)
     
@@ -165,6 +205,20 @@ def mark():
             f.write(line+'\n')
     f.close()
     TXT2EXCEL()
+    
+ 
+    
+def review_marked():
+    # inx used to store marked vocab's index
+    inx = []
+    with open(TXT_file_name) as f:
+        lines = [line.rstrip() for line in f]
+        
+    for line in lines:
+        if "+" in line:
+            inx.append(lines.index(line)-1)
+    print(inx)     
+    return inx
 #=========================================================
 #               Save Vocab Frame
 #=========================================================
@@ -227,11 +281,11 @@ frm_learn = tk.Frame(relief=tk.SUNKEN, width=20,bg='#FFC0CB')
 frm_learn.pack()
 
 lbl_Writein = tk.Label(master=frm_learn, \
-    text="Number of word to review",bg='#FFC0CB')
+    text="Number of word to review",bg='#FFC0CB',font=("Arial", 20))
 lbl_Writein.grid(row=1, column=0, padx=10,sticky="ew")
 
 lbl_Process = tk.Label(master=frm_learn, \
-    text="",bg='#FFC0CB')
+    text="",bg='#FFC0CB',font=("Times", 15))
 lbl_Process.grid(row=0, column=0, padx=10,sticky="ew")
 
 # Entry of how many vocabs to learn 
@@ -240,21 +294,37 @@ ent_numtolearn.grid(row=2, column=0)
 
 frm_button_learn = tk.Frame(bg='#FFC0CB')
 frm_button_learn.pack(fill=tk.X, ipadx=5, ipady=5)
+
+frm_button_2nd = tk.Frame(bg='#FFC0CB')
+frm_button_2nd.pack(fill=tk.X, ipadx=5, ipady=5)
+
+btn_mark = tk.Button(master=frm_button_2nd, text="Mark"\
+                         ,command=mark,fg='#FF9933', highlightbackground='#FFC0CB',width=10)
+btn_mark.pack(side=tk.RIGHT, ipadx=5)
+
+btn_review_marked = tk.Button(master=frm_button_2nd,text="Review only Marked? : %s"%(Review_only_marked),\
+                  command=toggle,fg='#FF9933', highlightbackground='#FFC0CB',width=18)
+btn_review_marked.pack(side=tk.LEFT, ipadx=5)
+
 # Create the "Clear" button and pack it to the
 # right side of `frm_buttons`
 btn_start = tk.Button(master=frm_button_learn,\
-    text="Start Learning", fg="#20B2AA",command=learn_vocab, highlightbackground='#FFC0CB')
-btn_start.pack(side=tk.RIGHT, ipadx=10)
+    text="Start Learning", fg="#20B2AA",command=learn_vocab, highlightbackground='#FFC0CB',width=10)
+btn_start.pack(side=tk.RIGHT, ipadx=5)
 learn_vocab.count_learn = 0
 
 btn_show_def = tk.Button(master=frm_button_learn, text="Show Definition"\
-                         ,command=show_def,fg='#87CEFA', highlightbackground='#FFC0CB')
-btn_show_def.pack(side=tk.RIGHT, ipadx=10)
+                         ,command=show_def,fg='#87CEFA', highlightbackground='#FFC0CB',width=18)
+btn_show_def.pack(side=tk.LEFT, ipadx=5)
 
-btn_mark = tk.Button(master=frm_button_learn, text="Mark"\
-                         ,command=mark,fg='#FF9933', highlightbackground='#FFC0CB')
-btn_mark.pack(side=tk.RIGHT, ipadx=10)
 
+
+'''
+frm_button_2nd.columnconfigure(0, weight=1)
+frm_button_2nd.columnconfigure(1, weight=1)
+btn_review_marked.grid(row=0, column=0, sticky=tk.W+tk.E)
+btn_mark.grid(row=0, column=1, sticky=tk.W+tk.E)
+'''
 # create a label for the showing of definition
 lbl_defi = tk.Label(master=frm_learn, text="",bg='#FFC0CB')
 lbl_defi.grid(row=3, column=0, padx=10,sticky="ew")
