@@ -124,7 +124,10 @@ def toggle(tog=[0]):
 
 def learn_vocab():    
     lbl_defi["text"] = ""
-    
+
+    # The index of all marked vocab
+    marked_inx = review_marked()
+
     # Entering the function first time, we do this:
     if learn_vocab.count_learn == 0:
         # Get the entry of the number of words to review
@@ -141,8 +144,13 @@ def learn_vocab():
                       encoding=None)
 
         # Case if the num to learn bigger than the actual vocab capacity
-        if learn_vocab.num_learn >= len(learn_vocab.R_word):
-            learn_vocab.num_learn = len(learn_vocab.R_word)
+        if Review_only_marked:
+            up_limit = len(marked_inx)
+        else:
+            up_limit = len(learn_vocab.R_word)
+
+        if learn_vocab.num_learn >= up_limit:
+            learn_vocab.num_learn = up_limit
     
     
     # in the case of finishing the review goal
@@ -156,10 +164,13 @@ def learn_vocab():
         return
         
     elif learn_vocab.count_learn == 0:
-        print(Review_only_marked) 
+        print("Review only marked = %s "%Review_only_marked) 
+
+        # Review only marked
         if Review_only_marked:
-            marked_inx = review_marked()
             learn_vocab.random_num = random.sample(marked_inx,learn_vocab.num_learn)
+        
+        # review all 
         else:    
             learn_vocab.random_num = random.sample(range(0,len(learn_vocab.R_word)),\
                                     learn_vocab.num_learn)
@@ -217,7 +228,7 @@ def review_marked():
     for line in lines:
         if "+" in line:
             inx.append(lines.index(line)-1)
-    print(inx)     
+    #print(inx)     
     return inx
 #=========================================================
 #               Save Vocab Frame
