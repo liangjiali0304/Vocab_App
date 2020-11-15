@@ -451,7 +451,7 @@ flummery	n	假恭維，胡言亂語
 forgo	v	放棄
 formidable	adj	可怕的，令人敬畏的，難對付的
 forsake	v	拋棄
-frugal++	adj	簡樸的
+frugal+++	adj	簡樸的
 fungible	adj	可取代的
 futile	adj	無用的
 garrulous	adj	喋喋不休的
@@ -1204,4 +1204,4 @@ daft	adj	愚笨的
 foible	n	小缺點
 redress	v	糾正
 smuggle	v	走私
-		
+

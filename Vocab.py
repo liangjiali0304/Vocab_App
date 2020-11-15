@@ -30,6 +30,8 @@ level2_bg_color = '#ba9ded'
 level2_fg_color = '#78021a'
 level3_bg_color = '#FFC7CE'
 level3_fg_color = '#78021a'
+level4_bg_color = '#fa3c54'
+level4_fg_color = '#78021a'
 #=========================================================
 
 #=========================================================
@@ -81,8 +83,16 @@ def TXT2EXCEL():
     format3 = workbook.add_format({'bg_color':   level3_bg_color,\
                                    'font_color': level3_fg_color}) 
 
+    format4 = workbook.add_format({'bg_color':   level4_bg_color,\
+                                   'font_color': level4_fg_color}) 
+
 
     # The order has to be in this format or it would not work
+    worksheet.conditional_format('A1:C20000', {'type':     'text',
+                                       'criteria': 'containing',
+                                       'value':    '++++',
+                                       'format':   format4}) 
+
     worksheet.conditional_format('A1:C20000', {'type':     'text',
                                        'criteria': 'containing',
                                        'value':    '+++',
@@ -122,7 +132,8 @@ def toggle(tog=[0]):
     #print(Review_only_marked)  
 
 
-def learn_vocab():    
+def learn_vocab(): 
+    learn_vocab.count_learn +=1   
     lbl_defi["text"] = ""
 
     # The index of all marked vocab
@@ -188,7 +199,7 @@ def show_def():
     lbl_defi["text"] = learn_vocab.R_class[learn_vocab.random_num][learn_vocab.count_learn] \
     + "   " + learn_vocab.R_define[learn_vocab.random_num][learn_vocab.count_learn]
         # adding the count so we can review the next vocab
-    learn_vocab.count_learn +=1 
+     
     #disable the show definition so people won't press accidentally
     btn_show_def["state"] = "disabled"
 
@@ -322,7 +333,7 @@ btn_review_marked.pack(side=tk.LEFT, ipadx=5)
 btn_start = tk.Button(master=frm_button_learn,\
     text="Start Learning", fg="#20B2AA",command=learn_vocab, highlightbackground='#FFC0CB',width=10)
 btn_start.pack(side=tk.RIGHT, ipadx=5)
-learn_vocab.count_learn = 0
+learn_vocab.count_learn = -1
 
 btn_show_def = tk.Button(master=frm_button_learn, text="Show Definition"\
                          ,command=show_def,fg='#87CEFA', highlightbackground='#FFC0CB',width=18)
