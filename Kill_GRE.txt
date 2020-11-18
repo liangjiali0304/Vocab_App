@@ -391,7 +391,7 @@ reprehensible	adj	受譴責的
 repertoire+	n	個人曲目
 dampen	v	抑制
 deaden	v	使。。減弱
-rehash+	v	重新處理
+rehash++	v	重新處理
 untoward	adj	異常的
 unprecedented	adj	前所未有的
 squelch	v	鎮壓

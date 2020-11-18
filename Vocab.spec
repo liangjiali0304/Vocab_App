@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Vocab.py'],
-             pathex=['/Users/jialiliang/Desktop/Code/Vocab_App'],
+             pathex=['/Users/jiali/Code/Vocab_App'],
              binaries=[],
              datas=[],
              hiddenimports=[],

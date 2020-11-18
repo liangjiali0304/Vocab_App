@@ -9,17 +9,20 @@ import xlsxwriter
 # I wish you winner winner chicken dinner!
 
 #=========================================================
-# General Names
+# General Names 
+# TXT文檔的名字
 # The .txt file name 
 TXT_file_name = 'Kill_GRE.txt'
 
-# .xlsx file name
+# .xlsx file name 
+#  XLSX文檔的名字
 EXCEL_file_name = 'Kill_GRE.xlsx'
 
 # Title display on the window
-TITLE = "加力的單詞本"
+# App 的名字  
+TITLE = "單詞本"
 
-# Defualt setting of only review marked vocab
+# Default setting of only review marked vocab
 
 Review_only_marked = True
 
@@ -143,8 +146,8 @@ def learn_vocab():
     if learn_vocab.count_learn == 0:
         # Get the entry of the number of words to review
         learn_vocab.num_learn = int(ent_numtolearn.get())
-        if learn_vocab.num_learn == "":
-            print("NO")
+        #if learn_vocab.num_learn == "":
+            #print("NO")
         # remove the entry window
         ent_numtolearn.destroy()
         btn_start['text'] = 'Next'
@@ -175,7 +178,7 @@ def learn_vocab():
         return
         
     elif learn_vocab.count_learn == 0:
-        print("Review only marked = %s "%Review_only_marked) 
+        #print("Review only marked = %s "%Review_only_marked) 
 
         # Review only marked
         if Review_only_marked:
